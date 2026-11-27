@@ -115,6 +115,11 @@ Si al entrar por FTP ya estás dentro de la carpeta pública (ves `index.html` e
 raíz), pon `FTP_REMOTE_DIR` con valor `/`. Si ves una carpeta `htdocs`, deja el
 valor por defecto `htdocs/`.
 
+El workflow usa por defecto `https://mojintime.byethost12.com/` para las URLs
+canónicas. Si tu dominio es otro, crea en **Settings → Secrets and variables →
+Actions → Variables** una variable llamada `BYETHOST_SITE_URL` con tu dominio
+(por ejemplo `https://tudominio.com/`).
+
 ### 3. Lanza la primera subida
 
 Ve a **Actions → Actualizar y publicar en ByetHost → Run workflow**.

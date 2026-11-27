@@ -53,7 +53,9 @@ jobs:
 
       - name: Actualizar sesiones, vídeos y estadísticas
         env:
-          SITE_URL: ${{ vars.SITE_URL }}
+          # Dominio con el que se publica en ByetHost. Si usas otro, crea la
+          # variable BYETHOST_SITE_URL en Settings → Secrets and variables → Actions → Variables.
+          SITE_URL: ${{ vars.BYETHOST_SITE_URL || 'https://mojintime.byethost12.com/' }}
         run: node tools/update.mjs
 
       - name: Preparar la carpeta dist
