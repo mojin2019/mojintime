@@ -1,13 +1,13 @@
 window.MOJIN_DATA = {
   "meta": {
-    "generatedAt": "2026-11-27T12:11:27.767Z",
+    "generatedAt": "2026-11-27T12:35:52.319Z",
     "source": "Internet Archive · YouTube · Twitch"
   },
   "site": {
     "name": "Mojin Time",
     "slogan": "La carpa nunca cierra.",
     "description": "DJ, streamer y archivo sonoro. Hard music, visuales y sesiones de horas desde La Carpa.",
-    "url": "https://mojintime.byethost12.com/",
+    "url": "https://mojin2019.github.io/mojintime/",
     "archiveUrl": "https://archive.org/details/mojin-time-la-carpa",
     "archiveDownload": "https://archive.org/download/mojin-time-la-carpa/",
     "twitch": "https://www.twitch.tv/mojintime",
@@ -15,7 +15,7 @@ window.MOJIN_DATA = {
     "youtubeHandle": "https://www.youtube.com/@mojinTime",
     "instagram": "https://www.instagram.com/mojin_time",
     "tiktok": "https://www.tiktok.com/@mojintime",
-    "linktree": "https://mojintime.byethost12.com/"
+    "linktree": "https://mojin2019.github.io/mojintime/"
   },
   "stats": {
     "sessions": 229,
@@ -4250,7 +4250,7 @@ window.MOJIN_DATA = {
       "date": "2026-11-22",
       "duration": 14674,
       "minutes": 245,
-      "views": 73,
+      "views": 74,
       "thumb": "assets/img/yt/N-VTa0iD_Jo.webp",
       "url": "https://www.youtube.com/watch?v=N-VTa0iD_Jo"
     },

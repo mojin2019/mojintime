@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mojintime.byethost12.com/sitemap.xml
+Sitemap: https://mojin2019.github.io/mojintime/sitemap.xml
