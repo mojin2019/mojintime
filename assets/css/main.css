@@ -866,3 +866,140 @@ html{scrollbar-color:rgba(52,231,255,.5) #040a14;scrollbar-width:thin}
   .hero-canvas{display:none}
   .cursor{display:none}
 }
+
+/* ============================================================
+   VISTAS INDEPENDIENTES + MARCO CON SCROLL INTERIOR
+   La página no scrollea: solo #viewFrame, debajo del menú fijo.
+   ============================================================ */
+:root{--head-h:88px}
+@media (max-width:720px){:root{--head-h:74px}}
+
+html.js body.app-shell{
+  height:100vh;
+  height:100dvh;
+  overflow:hidden;
+  overscroll-behavior:none;
+}
+body.app-shell .site-head{
+  background:rgba(2,5,12,.88);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-color:var(--line);
+}
+body.app-shell .site-head.is-hidden{transform:none}
+body.app-shell .site-head-inner{height:var(--head-h)}
+body.app-shell .view-frame{
+  position:fixed;
+  inset:var(--head-h) 0 0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-gutter:stable;
+  border-top:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(4,10,20,.4),transparent 140px);
+}
+html.js body.app-shell .view{display:none;min-height:calc(100dvh - var(--head-h) - 1px)}
+html.js body.app-shell .view.is-active{display:block;animation:viewIn .34s var(--ease)}
+html.js body.app-shell #inicio.is-active{display:flex;flex-direction:column}
+@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+body.app-shell[data-view="inicio"] .site-foot{display:none}
+
+/* --- tipografía algo más grande, ritmo más compacto --- */
+body{font-size:17px;line-height:1.52}
+body.app-shell .nav a{font-size:11px;letter-spacing:.09em;padding:4px 0}
+body.app-shell .brand-type b,
+body.app-shell .brand-type>span{font-size:19px}
+body.app-shell .head-badge{font-size:9px}
+body.app-shell .eyebrow{font-size:9.5px;letter-spacing:.15em}
+body.app-shell .hero{padding:clamp(34px,6vh,74px) 0 22px;min-height:0;flex:1}
+body.app-shell #inicio .hero{justify-content:center}
+body.app-shell .hero-inner{gap:clamp(28px,4vw,64px);padding-top:0}
+body.app-shell .hero-title{font-size:clamp(4.6rem,11vw,10.6rem);line-height:.84;margin:14px 0 20px}
+body.app-shell .hero-slogan{font-size:clamp(1.35rem,2.2vw,1.95rem);line-height:1.12}
+body.app-shell .hero-lead{font-size:1.06rem;line-height:1.58;margin:16px 0 22px;max-width:60ch}
+body.app-shell .hero-note{font-size:9px;line-height:1.5;margin-top:18px}
+body.app-shell .hero-bottom{margin-top:clamp(22px,4vh,46px)}
+body.app-shell .hero-stats{gap:18px;width:min(800px,78%)}
+body.app-shell .hstat strong{font-size:clamp(24px,2.4vw,36px)}
+body.app-shell .hstat>span{font-size:8px;letter-spacing:.1em;margin-top:6px}
+body.app-shell .ticker{padding:10px 0}
+body.app-shell .ticker-track span{font-size:15px}
+body.app-shell .view.section{padding:clamp(40px,6vh,84px) 0 clamp(54px,8vh,100px)}
+body.app-shell .view.archive{padding-top:clamp(30px,5vh,58px)}
+body.app-shell .section-head{margin-bottom:clamp(22px,3.4vh,40px)}
+body.app-shell .section-head-grid{gap:clamp(24px,3.6vw,58px)}
+body.app-shell .section-kicker{font-size:10px;margin-bottom:14px}
+body.app-shell .section-title{font-size:clamp(3rem,5.7vw,6.5rem);line-height:.94}
+body.app-shell .section-lead{font-size:1.03rem;line-height:1.62;max-width:52ch}
+body.app-shell .section-micro{font-size:9px;margin-top:14px}
+body.app-shell .section-aside{padding-bottom:2px}
+body.app-shell .player-deck{top:16px}
+body.app-shell .about-sticky{top:20px}
+body.app-shell .about-text p{font-size:1.03rem;line-height:1.66;margin-bottom:15px}
+body.app-shell .about-text .about-lead{font-size:1.2rem;line-height:1.55;margin-bottom:18px}
+body.app-shell .about-quote p{line-height:1.32}
+body.app-shell .deck-title{font-size:clamp(26px,2.5vw,40px);line-height:.98}
+body.app-shell .deck-sub{font-size:12px;line-height:1.45}
+body.app-shell .pl-sub{font-size:12px}
+body.app-shell .pl-search input{font-size:12px}
+body.app-shell .chip{font-size:9px;height:30px}
+body.app-shell .random-btn{font-size:9px}
+body.app-shell .tr-main strong{font-size:12px}
+body.app-shell .tr-main em{font-size:8px}
+body.app-shell .tr-dur{font-size:9px}
+body.app-shell .tr-date b{font-size:18px}
+body.app-shell .yt-title{font-size:17px;line-height:1.06}
+body.app-shell .yt-meta{font-size:8px}
+body.app-shell .yt-foot p{font-size:9px}
+body.app-shell .live-title{font-size:13px;line-height:1.4}
+body.app-shell .live-date{font-size:8px}
+body.app-shell .live-stats strong{font-size:22px}
+body.app-shell .live-stats span{font-size:7px}
+body.app-shell .net-card{padding:20px}
+body.app-shell .net-body strong{font-size:26px}
+body.app-shell .net-kicker{font-size:7px}
+body.app-shell .net-handle{font-size:8px}
+body.app-shell .final-cta{padding-top:clamp(48px,7vh,90px);margin-top:clamp(48px,7vh,90px)}
+body.app-shell .site-foot{padding:44px 0 24px}
+body.app-shell .foot-mark{font-size:clamp(58px,12vw,170px);margin-bottom:26px}
+body.app-shell .foot-col a{font-size:9px}
+body.app-shell .foot-col p{font-size:11px}
+body.app-shell .foot-col .text-link{font-size:8px}
+body.app-shell .toast{bottom:88px}
+
+@media (max-width:1100px){
+  body.app-shell .hero-title{font-size:clamp(4.8rem,13vw,9rem)}
+  body.app-shell .hero-stats{width:100%}
+}
+@media (max-width:880px){
+  body.app-shell .section-title{font-size:clamp(2.9rem,8.6vw,5rem)}
+  body.app-shell .hero-title{font-size:clamp(4.4rem,14.5vw,7.6rem)}
+}
+@media (max-width:720px){
+  body.app-shell .site-head-inner{height:var(--head-h)}
+  body.app-shell .hero{padding:28px 0 18px}
+  body.app-shell .hero-title{font-size:clamp(3.9rem,17.5vw,6rem);margin:12px 0 16px}
+  body.app-shell .hero-slogan{font-size:1.4rem}
+  body.app-shell .hero-lead{font-size:1rem;line-height:1.52;margin:14px 0 18px}
+  body.app-shell .hero-note{font-size:8px}
+  body.app-shell .hero-bottom{margin-top:22px}
+  body.app-shell .hstat strong{font-size:26px}
+  body.app-shell .hstat>span{font-size:7px}
+  body.app-shell .section-title{font-size:clamp(2.6rem,11.5vw,4.1rem)}
+  body.app-shell .section-lead{font-size:.98rem;line-height:1.55}
+  body.app-shell .view.section{padding:34px 0 58px}
+  body.app-shell .view.archive{padding-top:26px}
+  body.app-shell .section-head{margin-bottom:22px}
+  body.app-shell .player-deck{top:8px}
+  body.app-shell .about-text p{font-size:1rem}
+  body.app-shell .about-text .about-lead{font-size:1.1rem}
+  body.app-shell .tr-main strong{font-size:11px}
+  body.app-shell .tr-main em{font-size:7px}
+  body.app-shell .net-body strong{font-size:22px}
+  body.app-shell .final-cta{padding-top:44px;margin-top:44px}
+}
+@media (max-width:420px){
+  body.app-shell .hero-title{font-size:clamp(3.5rem,18vw,4.8rem)}
+  body.app-shell .hstat strong{font-size:24px}
+}

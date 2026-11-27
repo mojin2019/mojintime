@@ -1,0 +1,17 @@
+{
+  "name": "mojintime-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mojin Time — La Carpa. Web estática con actualización y publicación automática.",
+  "scripts": {
+    "actualizar": "node tools/update.mjs",
+    "build": "node tools/build.mjs",
+    "auto": "node tools/update.mjs && node tools/build.mjs",
+    "preview": "node tools/preview.mjs",
+    "preview:dist": "node tools/preview.mjs --dist"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

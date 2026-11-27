@@ -1,6 +1,6 @@
 window.MOJIN_DATA = {
   "meta": {
-    "generatedAt": "2026-11-27T10:40:54.816Z",
+    "generatedAt": "2026-11-27T12:11:27.767Z",
     "source": "Internet Archive · YouTube · Twitch"
   },
   "site": {
@@ -20,7 +20,7 @@ window.MOJIN_DATA = {
   "stats": {
     "sessions": 229,
     "hours": 825,
-    "durationSeconds": 2971802.730000001,
+    "durationSeconds": 2971802.73,
     "sizeGB": 110.84,
     "sizeBytes": 119018408956,
     "twitchFollowers": 1876,
@@ -39,14 +39,38 @@ window.MOJIN_DATA = {
     },
     "firstDate": "2023-01-04",
     "latestDate": "2026-11-22",
-    "lastBroadcast": "2026-11-26T23:18:57Z",
-    "lastBroadcastTitle": "LA CARPA · Live DJ Set | HARD MUSIC & VISUALS"
+    "lastBroadcast": "2026-11-26T23:18:57.11684Z",
+    "lastBroadcastTitle": "🔥 LA CARPA 🎪 Live DJ Set | HARD MUSIC & VISUALS 🎛️🎧 (testeando la neuva carpa renovada )"
   },
   "featured": [
     {
       "id": "s-161b49063e",
       "tag": "La última",
       "local": "assets/img/covers/cover-latest.png"
+    },
+    {
+      "id": "s-c953585838",
+      "tag": "Cumpleaños",
+      "local": null,
+      "auto": true
+    },
+    {
+      "id": "s-2764eeb26b",
+      "tag": "Cumpleaños Noctis",
+      "local": null,
+      "auto": true
+    },
+    {
+      "id": "s-c203cdd020",
+      "tag": "Nochebuena",
+      "local": null,
+      "auto": true
+    },
+    {
+      "id": "s-f1a5f759cd",
+      "tag": "Cumpleaños Bego",
+      "local": null,
+      "auto": true
     },
     {
       "id": "s-10d12f05ce",
@@ -4074,60 +4098,6 @@ window.MOJIN_DATA = {
       "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2029.11.2023_spectrogram.png"
     },
     {
-      "id": "s-10c37dd22c",
-      "file": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 1.mp3",
-      "title": "All Raid Long 2.0 · Parte 1",
-      "date": "2023-11-16",
-      "year": 2023,
-      "dateRaw": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 1.mp3",
-      "duration": 18207.1,
-      "durationLabel": "5 h 03 min",
-      "size": 728922731,
-      "part": 1,
-      "special": false,
-      "label": "Parte 1",
-      "audio": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201.mp3",
-      "download": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201.mp3?download=1",
-      "cover": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201.png",
-      "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201_spectrogram.png"
-    },
-    {
-      "id": "s-6d8e9a6274",
-      "file": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 2.mp3",
-      "title": "All Raid Long 2.0 · Parte 2",
-      "date": "2023-11-16",
-      "year": 2023,
-      "dateRaw": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 2.mp3",
-      "duration": 19409.45,
-      "durationLabel": "5 h 23 min",
-      "size": 777016811,
-      "part": 2,
-      "special": false,
-      "label": "Parte 2",
-      "audio": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202.mp3",
-      "download": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202.mp3?download=1",
-      "cover": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202.png",
-      "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202_spectrogram.png"
-    },
-    {
-      "id": "s-2d2f59a787",
-      "file": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 3.mp3",
-      "title": "All Raid Long 2.0 · Parte 3",
-      "date": "2023-11-16",
-      "year": 2023,
-      "dateRaw": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 3.mp3",
-      "duration": 10248.94,
-      "durationLabel": "2 h 50 min",
-      "size": 410596331,
-      "part": 3,
-      "special": false,
-      "label": "Parte 3",
-      "audio": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203.mp3",
-      "download": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203.mp3?download=1",
-      "cover": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203.png",
-      "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203_spectrogram.png"
-    },
-    {
       "id": "s-bff93d8349",
       "file": "Mojin Time - La Carpa 16.11.2023 - NOISE TYRANTS HARDCORE THUNDER TRAIN.mp3",
       "title": "Noise Tyrants · Hardcore Thunder Train",
@@ -4198,6 +4168,60 @@ window.MOJIN_DATA = {
       "download": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20VOL%2089%20CUMPLEA%C3%91OS%20GERSIO%20Y%20REGALOS%20SUB%2040.mp3?download=1",
       "cover": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20VOL%2089%20CUMPLEA%C3%91OS%20GERSIO%20Y%20REGALOS%20SUB%2040.png",
       "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20VOL%2089%20CUMPLEA%C3%91OS%20GERSIO%20Y%20REGALOS%20SUB%2040_spectrogram.png"
+    },
+    {
+      "id": "s-10c37dd22c",
+      "file": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 1.mp3",
+      "title": "All Raid Long 2.0 · Parte 1",
+      "date": "2023-11-16",
+      "year": 2023,
+      "dateRaw": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 1.mp3",
+      "duration": 18207.1,
+      "durationLabel": "5 h 03 min",
+      "size": 728922731,
+      "part": 1,
+      "special": false,
+      "label": "Parte 1",
+      "audio": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201.mp3",
+      "download": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201.mp3?download=1",
+      "cover": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201.png",
+      "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%201_spectrogram.png"
+    },
+    {
+      "id": "s-6d8e9a6274",
+      "file": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 2.mp3",
+      "title": "All Raid Long 2.0 · Parte 2",
+      "date": "2023-11-16",
+      "year": 2023,
+      "dateRaw": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 2.mp3",
+      "duration": 19409.45,
+      "durationLabel": "5 h 23 min",
+      "size": 777016811,
+      "part": 2,
+      "special": false,
+      "label": "Parte 2",
+      "audio": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202.mp3",
+      "download": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202.mp3?download=1",
+      "cover": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202.png",
+      "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%202_spectrogram.png"
+    },
+    {
+      "id": "s-2d2f59a787",
+      "file": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 3.mp3",
+      "title": "All Raid Long 2.0 · Parte 3",
+      "date": "2023-11-16",
+      "year": 2023,
+      "dateRaw": "Mojin Time - La Carpa 16.11.2023 - ALL RAID LONG 2.0 PART 3.mp3",
+      "duration": 10248.94,
+      "durationLabel": "2 h 50 min",
+      "size": 410596331,
+      "part": 3,
+      "special": false,
+      "label": "Parte 3",
+      "audio": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203.mp3",
+      "download": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203.mp3?download=1",
+      "cover": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203.png",
+      "spectrogram": "https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20-%20La%20Carpa%2016.11.2023%20-%20ALL%20RAID%20LONG%202.0%20PART%203_spectrogram.png"
     },
     {
       "id": "s-36d026e586",

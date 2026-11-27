@@ -39,7 +39,12 @@ El reproductor guarda en `localStorage` la última sesión, el minuto, el volume
 
 ## Actualizar el archivo
 
-`assets/js/data.js` se generó a partir del metadata de Internet Archive y del feed de YouTube. No necesitas regenerarlo para publicar. Si quieres añadir o editar sesiones, abre `data.js`: cada sesión es un objeto dentro de `sessions`; para los vídeos, cada entrada vive en `videos`.
+`assets/js/data.js` se genera a partir del metadata de Internet Archive, el feed de YouTube y Twitch. La publicación es automática: GitHub Actions revisa las novedades cada 6 horas, regenera los datos y publica la web en GitHub Pages.
+
+- Guía paso a paso: [`AUTOMATICO.md`](AUTOMATICO.md).
+- En local: `npm run actualizar`, `npm run build` y `npm run preview`.
+
+Si quieres editar algo a mano, cada sesión es un objeto dentro de `sessions` y cada vídeo vive en `videos`. Los títulos personalizados y las portadas locales se conservan entre actualizaciones.
 
 ## Créditos y notas
 

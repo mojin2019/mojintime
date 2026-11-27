@@ -55,7 +55,7 @@
   }
   </script>
 </head>
-<body>
+<body class="app-shell" data-view="inicio">
 
 <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11.14-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14Z"/></symbol>
@@ -120,6 +120,7 @@
     </a>
 
     <nav class="nav" aria-label="Navegación principal">
+      <a href="#inicio" data-nav="inicio">Inicio</a>
       <a href="#archivo" data-nav="archivo">Archivo</a>
       <a href="#especiales" data-nav="especiales">Especiales</a>
       <a href="#youtube" data-nav="youtube">YouTube</a>
@@ -164,10 +165,12 @@
   </div>
 </div>
 
+<div class="view-frame" id="viewFrame">
 <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section class="hero" id="inicio">
+  <section class="view is-active" id="inicio" data-view="inicio" tabindex="-1">
+    <div class="hero">
     <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-floor" aria-hidden="true"></div>
@@ -226,21 +229,22 @@
         <div class="hstat" role="listitem"><strong><span class="counter" data-count="110.84" data-decimals="1">110,8</span><i>GB</i></strong><span>DE RECUERDOS</span></div>
         <div class="hstat" role="listitem"><strong><span class="counter" data-count="1876" data-suffix=" K" data-divide="1000" data-decimals="1">1,8</span></strong><span>SEGUIDORES EN TWITCH</span></div>
       </div>
-      <a class="scroll-hint" href="#archivo" aria-label="Bajar al reproductor"><span>SCROLL</span><i></i></a>
+      <a class="scroll-hint" href="#archivo" aria-label="Abrir el archivo"><span>ARCHIVO</span><i></i></a>
+    </div>
+    </div><!-- /.hero -->
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+        <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+        <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+        <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+      </div>
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
-      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
-      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
-      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
-    </div>
-  </div>
-
   <!-- ============ ARCHIVO / PLAYER ============ -->
-  <section class="section archive" id="archivo">
+  <section class="view section archive" id="archivo" data-view="archivo" tabindex="-1">
     <div class="wrap">
       <header class="section-head reveal">
         <div class="section-kicker"><span>01</span> EL ARCHIVO</div>
@@ -344,7 +348,7 @@
   </section>
 
   <!-- ============ ESPECIALES ============ -->
-  <section class="section specials" id="especiales">
+  <section class="view section specials" id="especiales" data-view="especiales" tabindex="-1">
     <div class="wrap">
       <header class="section-head reveal">
         <div class="section-kicker"><span>02</span> ESPECIALES</div>
@@ -366,7 +370,7 @@
   </section>
 
   <!-- ============ YOUTUBE ============ -->
-  <section class="section youtube" id="youtube">
+  <section class="view section youtube" id="youtube" data-view="youtube" tabindex="-1">
     <div class="wrap">
       <header class="section-head reveal">
         <div class="section-kicker"><span>03</span> RESUBIDOS</div>
@@ -390,7 +394,7 @@
   </section>
 
   <!-- ============ TWITCH ============ -->
-  <section class="section live" id="directo">
+  <section class="view section live" id="directo" data-view="directo" tabindex="-1">
     <div class="live-bg" aria-hidden="true"></div>
     <div class="wrap live-inner">
       <div class="live-copy reveal">
@@ -435,7 +439,7 @@
   </section>
 
   <!-- ============ SOBRE ============ -->
-  <section class="section about" id="sobre">
+  <section class="view section about" id="sobre" data-view="sobre" tabindex="-1">
     <div class="wrap">
       <div class="about-grid">
         <div class="about-sticky reveal">
@@ -478,7 +482,7 @@
   </section>
 
   <!-- ============ REDES ============ -->
-  <section class="section networks" id="redes">
+  <section class="view section networks" id="redes" data-view="redes" tabindex="-1">
     <div class="wrap">
       <header class="section-head reveal">
         <div class="section-kicker"><span>06</span> REDES</div>
@@ -572,6 +576,7 @@
     </div>
   </div>
 </footer>
+</div><!-- /#viewFrame -->
 
 <!-- ============ MINI PLAYER ============ -->
 <div class="mini-player" id="miniPlayer" aria-label="Reproductor rápido">

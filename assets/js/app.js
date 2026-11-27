@@ -108,6 +108,19 @@
   let savedVolume = Number.isFinite(saved.volume) ? clamp(saved.volume, 0, 1) : 0.85;
   let savedSpeed = Number.isFinite(saved.speed) && saved.speed > 0 ? saved.speed : 1;
 
+  /* ---------------- vistas / router ---------------- */
+  const VIEWS = ['inicio', 'archivo', 'especiales', 'youtube', 'directo', 'sobre', 'redes'];
+  const VIEW_TITLES = {
+    inicio: 'Mojin Time — La carpa nunca cierra · DJ, directos y archivo',
+    archivo: 'El archivo — Mojin Time',
+    especiales: 'Especiales — Mojin Time',
+    youtube: 'YouTube — Mojin Time',
+    directo: 'Twitch en directo — Mojin Time',
+    sobre: 'Sobre mí — Mojin Time',
+    redes: 'Redes — Mojin Time'
+  };
+  let currentView = 'inicio';
+
   /* ---------------- DOM ---------------- */
   const audio = new Audio();
   audio.preload = 'metadata';
@@ -116,7 +129,7 @@
   const el = {
     loader: $('#loader'), loaderBar: $('#loaderBar'), loaderPct: $('#loaderPct'),
     head: $('#siteHead'), menuToggle: $('#menuToggle'), mobileMenu: $('#mobileMenu'), menuClose: $('#menuClose'),
-    progress: $('#scrollProgress'),
+    progress: $('#scrollProgress'), frame: $('#viewFrame'),
     playerDeck: $('#playerDeck'), playerStatus: $('#playerStatus'),
     deckArtImg: $('#deckArtImg'), deckYear: $('#deckYear'), deckDate: $('#deckDate'),
     deckTitle: $('#deckTitle'), deckSub: $('#deckSub'), deckTag: $('#deckTag'), deckSpecial: $('#deckSpecial'), deckCode: $('#deckCode'),
@@ -269,16 +282,23 @@
 
   function updateMiniVisibility() {
     if (!el.mini) return;
-    const y = window.scrollY || 0;
+    const frame = el.frame;
+    const y = frame?.scrollTop || 0;
+    const frameRect = frame?.getBoundingClientRect();
+    const frameBottom = frameRect ? frameRect.bottom : window.innerHeight;
+    const frameTop = frameRect ? frameRect.top : 0;
     const deck = el.playerDeck;
     let deckVisible = false;
-    if (deck) {
+    if (deck && currentView === 'archivo') {
       const r = deck.getBoundingClientRect();
-      deckVisible = r.top < window.innerHeight - 100 && r.bottom > 120;
+      deckVisible = r.top < frameBottom - 100 && r.bottom > frameTop + 80;
     }
     const footer = document.querySelector('.site-foot');
-    const footerVisible = !!footer && footer.getBoundingClientRect().top < window.innerHeight - 60;
-    const should = !!state.current && !state.miniClosed && (state.hasInteracted || y > 700) && !deckVisible && !footerVisible;
+    const footerVisible = !!footer
+      && getComputedStyle(footer).display !== 'none'
+      && footer.getBoundingClientRect().top < frameBottom - 60;
+    const started = state.hasInteracted || state.playing;
+    const should = !!state.current && started && !state.miniClosed && (state.hasInteracted || y > 400) && !deckVisible && !footerVisible;
     el.mini.classList.toggle('is-visible', should);
   }
 
@@ -425,6 +445,7 @@
     } else {
       loadSession(latest, { autoplay: true });
     }
+    if (currentView !== 'archivo') setView('archivo', { push: true });
     toast(`Sonando la última sesión · ${fmtDate(latest.date)}`);
   }
 
@@ -680,7 +701,9 @@
   function syncBodyLock() {
     const anyDialog = !!document.querySelector('dialog[open]');
     const menu = el.mobileMenu?.classList.contains('is-open');
-    document.body.classList.toggle('is-locked', anyDialog || menu);
+    const locked = anyDialog || menu;
+    document.body.classList.toggle('is-locked', locked);
+    if (el.frame) el.frame.style.overflowY = locked ? 'hidden' : '';
   }
   function openDialog(dialog) {
     if (!dialog) return;
@@ -951,37 +974,77 @@
   }
 
   /* ---------------- header / nav ---------------- */
-  function initHeader() {
-    let lastY = window.scrollY || 0;
-    let ticking = false;
-    const sections = ['inicio', 'archivo', 'especiales', 'youtube', 'directo', 'sobre', 'redes'];
-    function update() {
-      const y = window.scrollY || 0;
-      if (el.head) {
-        el.head.classList.toggle('is-scrolled', y > 30);
-        if (!el.mobileMenu?.classList.contains('is-open')) {
-          if (y > lastY && y > 460) el.head.classList.add('is-hidden');
-          else if (y < lastY - 4) el.head.classList.remove('is-hidden');
-        }
-      }
-      if (el.progress) {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        el.progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
-      }
-      let active = 'inicio';
-      for (const id of sections) {
-        const section = document.getElementById(id);
-        if (section && section.getBoundingClientRect().top <= 150) active = id;
-      }
-      $$('[data-nav]').forEach(link => link.classList.toggle('is-active', link.dataset.nav === active));
-      lastY = y;
-      updateMiniVisibility();
-      ticking = false;
+  function viewFromHash(hash = location.hash) {
+    const id = decodeURIComponent(String(hash).replace(/^#\/?/, '')).trim();
+    return VIEWS.includes(id) ? id : 'inicio';
+  }
+
+  function updateScrollChrome() {
+    const frame = el.frame;
+    if (!frame) return;
+    const y = frame.scrollTop || 0;
+    el.head?.classList.toggle('is-scrolled', y > 4);
+    if (el.progress) {
+      const max = frame.scrollHeight - frame.clientHeight;
+      el.progress.style.width = `${max > 0 ? clamp((y / max) * 100, 0, 100) : 0}%`;
     }
-    window.addEventListener('scroll', () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    updateMiniVisibility();
+  }
+
+  function setView(id, { push = false, scrollTop = true } = {}) {
+    if (!VIEWS.includes(id)) id = 'inicio';
+    currentView = id;
+    document.body.dataset.view = id;
+    $$('.view').forEach(view => {
+      const active = view.id === id;
+      view.classList.toggle('is-active', active);
+      view.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+    $$('[data-nav]').forEach(link => {
+      const active = link.dataset.nav === id;
+      link.classList.toggle('is-active', active);
+      if (active) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    if (push && location.hash !== `#${id}`) history.pushState({ view: id }, '', `#${id}`);
+    if (scrollTop && el.frame) el.frame.scrollTop = 0;
+    document.title = VIEW_TITLES[id] || VIEW_TITLES.inicio;
+    const view = document.getElementById(id);
+    if (view) {
+      $$('.reveal', view).forEach(node => node.classList.add('is-in'));
+      if (id === 'inicio' || id === 'archivo') {
+        requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+      }
+    }
+    updateScrollChrome();
+  }
+
+  function initRouter() {
+    setView(viewFromHash(), { push: false });
+    window.addEventListener('popstate', () => setView(viewFromHash(), { push: false }));
+    window.addEventListener('hashchange', () => setView(viewFromHash(), { push: false }));
+    document.addEventListener('click', e => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const raw = decodeURIComponent(String(link.getAttribute('href')).replace(/^#\/?/, '')).trim();
+      if (!VIEWS.includes(raw)) return;
+      e.preventDefault();
+      setView(raw, { push: true });
+      requestAnimationFrame(() => document.getElementById(raw)?.focus({ preventScroll: true }));
+    });
+  }
+
+  function initHeader() {
+    const frame = el.frame;
+    if (!frame) return;
+    let ticking = false;
+    frame.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { updateScrollChrome(); ticking = false; });
     }, { passive: true });
-    update();
+    window.addEventListener('resize', updateScrollChrome, { passive: true });
+    updateScrollChrome();
   }
 
   function initMenu() {
@@ -992,7 +1055,7 @@
       el.mobileMenu.setAttribute('aria-hidden', 'false');
       el.menuToggle.setAttribute('aria-expanded', 'true');
       el.menuToggle.setAttribute('aria-label', 'Cerrar menú');
-      document.body.classList.add('is-locked');
+      syncBodyLock();
       background.forEach(node => { try { node.inert = true; } catch {} });
       setTimeout(() => el.menuClose?.focus({ preventScroll: true }), 50);
     };
@@ -1034,7 +1097,7 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: .08, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: .08, rootMargin: '0px 0px -8% 0px', root: el.frame || null });
     items.forEach(item => obs.observe(item));
   }
 
@@ -1072,7 +1135,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) { animate(entry.target); obs.unobserve(entry.target); }
       });
-    }, { threshold: .6 });
+    }, { threshold: .6, root: el.frame || null });
     counters.forEach(c => obs.observe(c));
   }
 
@@ -1170,14 +1233,14 @@
 
   function initDataChrome() {
     $$('[data-play-latest]').forEach(btn => btn.addEventListener('click', playLatest));
-    // update chip counts from data
-    $$('.chip', el.yearChips).forEach(btn => {
-      const y = btn.dataset.year;
-      const span = btn.querySelector('span');
-      if (!span) return;
-      if (y === 'all') span.textContent = D.stats.sessions;
-      else if (D.stats.yearCounts[y]) span.textContent = D.stats.yearCounts[y];
-    });
+    // rebuild the year chips from data so a new year appears automatically
+    if (el.yearChips) {
+      const years = Object.keys(D.stats.yearCounts || {}).sort((a, b) => Number(b) - Number(a));
+      el.yearChips.innerHTML = [
+        `<button class="chip is-active" data-year="all">Todas <span>${D.stats.sessions}</span></button>`,
+        ...years.map(y => `<button class="chip" data-year="${y}">${y} <span>${D.stats.yearCounts[y]}</span></button>`)
+      ].join('');
+    }
     updateFavChip();
   }
 
@@ -1325,8 +1388,9 @@
   function goToPlayer() {
     const target = document.getElementById('archivo');
     if (!target) return;
-    target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-    setTimeout(() => el.btnPlay?.focus({ preventScroll: true }), reduceMotion ? 0 : 600);
+    setView('archivo', { push: true });
+    el.frame?.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    setTimeout(() => el.btnPlay?.focus({ preventScroll: true }), reduceMotion ? 0 : 450);
   }
 
   function renderSpecialButtons() {
@@ -1379,12 +1443,12 @@
     });
     $('#ytMore')?.addEventListener('click', () => {
       renderVideos(true);
-      toast('Cargados los 15 resubidos del canal');
+      toast(`Cargados los ${D.videos.length} resubidos del canal`);
     });
   }
 
   function bindMisc() {
-    el.backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+    el.backTop?.addEventListener('click', () => el.frame?.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
     // keyboard shortcuts
     document.addEventListener('keydown', e => {
       const tag = (document.activeElement?.tagName || '').toLowerCase();
@@ -1456,6 +1520,7 @@
     bindDialogs();
     bindMisc();
     initHeader();
+    initRouter();
     initMenu();
     initReveals();
     initCounters();
