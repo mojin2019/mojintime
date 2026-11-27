@@ -1,0 +1,33 @@
+MOJIN TIME — LA CARPA
+=====================
+
+Web personal de Mojin Time, lista para subir a un hosting estático.
+
+CÓMO PUBLICARLA
+---------------
+1. Descomprime este ZIP.
+2. Sube TODO el contenido a la carpeta pública de tu hosting
+   (por ejemplo: public_html, www o htdocs).
+   El archivo index.html debe quedar en la raíz, no dentro de otra carpeta.
+3. Abre tu dominio. No necesitas PHP, base de datos ni instalar nada.
+
+IMPORTANTE
+----------
+- No borres ni muevas la carpeta "assets": contiene el diseño, las fuentes,
+  las portadas y el reproductor.
+- Las 229 sesiones no están dentro del ZIP. El reproductor las reproduce en
+  streaming desde Internet Archive, así que la web necesita conexión a internet.
+- Para el reproductor de Twitch, abre la web desde http:// o https://,
+  no haciendo doble clic sobre index.html.
+- Si publicas en otro dominio, cambia https://mojintime.byethost12.com/
+  en index.html, robots.txt y sitemap.xml.
+
+CONTENIDO
+---------
+index.html .......... la web completa
+assets/ ............. diseño, fuentes, imágenes y reproductor
+404.html ............ página de error personalizada
+README.md ........... instrucciones y créditos completos
+robots.txt / sitemap.xml / site.webmanifest
+
+LA CARPA NUNCA CIERRA.

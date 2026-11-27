@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#02050c">
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Mojin Time — La carpa nunca cierra · DJ, directos y archivo</title>
+  <meta name="description" content="La web oficial de Mojin Time: 229 sesiones de La Carpa, 825 horas de hard music, directos en Twitch y resubidos en YouTube. Entra y dale al play.">
+  <meta name="author" content="Mojin Time">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mojintime.byethost12.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mojin Time">
+  <meta property="og:title" content="Mojin Time — La carpa nunca cierra">
+  <meta property="og:description" content="229 sesiones, 825 horas de música y una carpa que no se apaga. Escucha el archivo completo de La Carpa.">
+  <meta property="og:url" content="https://mojintime.byethost12.com/">
+  <meta property="og:image" content="https://mojintime.byethost12.com/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mojin Time — La carpa nunca cierra. 229 sesiones y 825 horas de música.">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mojin Time — La carpa nunca cierra">
+  <meta name="twitter:description" content="229 sesiones, 825 horas de música. El archivo de La Carpa, en un solo reproductor.">
+  <meta name="twitter:image" content="https://mojintime.byethost12.com/assets/img/og.jpg">
+  <meta name="twitter:image:alt" content="Mojin Time — La carpa nunca cierra. 229 sesiones y 825 horas de música.">
+
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Mojin Time",
+    "description": "DJ, streamer y archivo sonoro de La Carpa. Hard music, visuales y sesiones de horas.",
+    "url": "https://mojintime.byethost12.com/",
+    "image": "https://mojintime.byethost12.com/assets/img/og.jpg",
+    "genre": ["Hard Music", "Hardstyle", "Hardcore", "Trance"],
+    "sameAs": [
+      "https://www.twitch.tv/mojintime",
+      "https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w",
+      "https://www.instagram.com/mojin_time",
+      "https://www.tiktok.com/@mojintime",
+      "https://archive.org/details/mojin-time-la-carpa"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11.14-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5.5v13a1 1 0 0 1-1.54.84L9 13.05v4.45a1 1 0 0 1-2 0v-11a1 1 0 0 1 2 0v4.45l9.46-6.29A1 1 0 0 1 20 5.5Z"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5.5v13a1 1 0 0 0 1.54.84L15 13.05v4.45a1 1 0 0 0 2 0v-11a1 1 0 0 0-2 0v4.45L5.54 4.66A1 1 0 0 0 4 5.5Z"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M16.5 3.5 21 8l-4.5 4.5-1.42-1.41L17.17 9H15.4c-.9 0-1.74.42-2.28 1.13l-4.62 6.06A4.34 4.34 0 0 1 5.08 18H3v-2h2.08c.74 0 1.44-.35 1.88-.94l4.62-6.06A4.34 4.34 0 0 1 15.4 7h1.77l-2.09-2.09L16.5 3.5Zm0 9L21 17l-4.5 4.5-1.42-1.41 2.09-2.09h-1.77c-1.12 0-2.17-.43-2.97-1.19l1.4-1.84c.4.66 1.03.03 1.57.03h1.77l-2.09-2.09 1.42-1.41Z"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 3l4 4-4 4V8H7a3 3 0 0 0-3 3v1H2v-1a5 5 0 0 1 5-5h10V3Zm5 9v1a5 5 0 0 1-5 5H7v3l-4-4 4-4v3h10a3 3 0 0 0 3-3v-1h2Z"/></symbol>
+  <symbol id="i-repeat-one" viewBox="0 0 24 24"><path d="M17 3l4 4-4 4V8H7a3 3 0 0 0-3 3v1H2v-1a5 5 0 0 1 5-5h10V3Zm5 9v1a5 5 0 0 1-5 5H7v3l-4-4 4-4v3h10a3 3 0 0 0 3-3v-1h2ZM11 10h2v5h-2v-3l-1 .6V11l1-.6V10Z"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2-3.74v7.48A4.5 4.5 0 0 0 16.5 12Zm-2-8.66v2.06a7.5 7.5 0 0 1 0 13.2v2.06a9.5 9.5 0 0 0 0-17.32Z"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.6 3 2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4-2.7-2.7Z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09A6.02 6.02 0 0 1 16.5 3C19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.5L12 21.35Z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v11.17l4.59-4.58L18 11l-6 6-6-6 1.41-1.41L12 14.17V3h0ZM4 19h16v2H4z"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41l-8.29 8.3-1.42-1.42L17.59 5H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M10.5 3a7.5 7.5 0 1 1 4.55 13.46l4.24 4.25-1.42 1.41-4.24-4.24A7.5 7.5 0 0 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M13.5 4.5 12.09 5.91 17.17 11H3v2h14.17l-5.08 5.09L13.5 19.5 21 12l-7.5-7.5Z"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 3.5 4.5 11l1.41 1.41L11 7.33V21h2V7.33l5.09 5.08L19.5 11 12 3.5Z"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4V4Zm10 0h6v6h-2V6h-4V4ZM4 14h2v4h4v2H4v-6Zm14 0h2v6h-6v-2h4v-4Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1 3v6l4.25 2.52.75-1.23-3.5-2.09V7h-1.5Z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6h2v2H4V6Zm4 0h12v2H8V6ZM4 11h2v2H4v-2Zm4 0h12v2H8v-2ZM4 16h2v2H4v-2Zm4 0h12v2H8v-2Z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l2.1 6.4L20.5 10l-5.3 4 2.1 6.4-5.3-3.9-5.3 3.9L8.8 14 3.5 10l6.4-1.6L12 2Z"/></symbol>
+  <symbol id="i-twitch" viewBox="0 0 24 24"><path d="M11.57 4.71h1.72v5.15h-1.72V4.71Zm4.72 0H18v5.15h-1.71V4.71ZM6 0 1.71 4.29v15.42h5.15V24l4.28-4.29h3.43L22.29 12V0H6Zm14.57 11.14-3.43 3.43h-3.43l-3 3v-3H6.86V1.71h13.71v9.43Z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.33.02 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.02 8.33 0 8.74 0 12s.02 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.98 8.74 24 12 24s3.67-.02 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.05-1.28.07-1.69.07-4.95s-.02-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.02 15.26 0 12 0Zm0 2.16c3.2 0 3.58.02 4.85.07 1.17.06 1.8.25 2.23.42.56.21.96.48 1.38.9.42.41.68.81.9 1.38.16.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.22-.22.57-.48.97-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.57-.22-.96-.48-1.38-.9-.42-.41-.69-.82-.9-1.38-.17-.42-.36-1.05-.42-2.22-.05-1.27-.06-1.65-.06-4.85s.01-3.58.06-4.85c.06-1.17.25-1.8.42-2.22.21-.57.48-.97.9-1.38.42-.42.81-.69 1.38-.9.43-.17 1.06-.36 2.23-.42 1.27-.05 1.65-.07 4.85-.07ZM12 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm7.85-10.41a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0Z"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></symbol>
+  <symbol id="i-archive" viewBox="0 0 24 24"><path d="M12 2 2 6.5V9h20V6.5L12 2Zm-8 9v8H2v2h20v-2h-2v-8h-2v8h-3v-8h-2v8h-3v-8H6v8H4v-8H2v-1Z"/></symbol>
+</svg>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-mark"><img src="assets/img/logo.webp" alt=""></div>
+    <p class="loader-kicker">MOJIN TIME · LA CARPA</p>
+    <p class="loader-title">ENCIENDE<br>LA CARPA</p>
+    <div class="loader-track"><span id="loaderBar"></span></div>
+    <div class="loader-meta"><span id="loaderPct">0%</span><span>HARD MUSIC &amp; VISUALS</span></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+<div class="ambient" aria-hidden="true">
+  <span class="ambient-orb ambient-orb-a"></span>
+  <span class="ambient-orb ambient-orb-b"></span>
+  <span class="ambient-grid"></span>
+  <span class="ambient-noise"></span>
+</div>
+
+<a class="skip-link" href="#archivo">Saltar al reproductor</a>
+<noscript>
+  <div class="nojs">
+    El reproductor necesita JavaScript. Mientras tanto puedes <a href="https://archive.org/details/mojin-time-la-carpa" target="_blank" rel="noopener">escuchar el archivo en Internet Archive</a> o <a href="https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w" target="_blank" rel="noopener">ver los resubidos en YouTube</a>.
+  </div>
+</noscript>
+
+<header class="site-head" id="siteHead">
+  <div class="wrap site-head-inner">
+    <a class="brand" href="#inicio" aria-label="Mojin Time — inicio">
+      <span class="brand-mark"><img src="assets/img/avatar.webp" alt="" width="48" height="48"></span>
+      <span class="brand-type"><b>MOJIN</b><span>TIME</span><small>LA CARPA</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#archivo" data-nav="archivo">Archivo</a>
+      <a href="#especiales" data-nav="especiales">Especiales</a>
+      <a href="#youtube" data-nav="youtube">YouTube</a>
+      <a href="#directo" data-nav="directo">Twitch</a>
+      <a href="#sobre" data-nav="sobre">Sobre mí</a>
+      <a href="#redes" data-nav="redes">Redes</a>
+    </nav>
+
+    <div class="head-actions">
+      <span class="head-badge"><i></i> TWITCH DJ</span>
+      <a class="btn btn-primary btn-sm" href="#archivo"><svg><use href="#i-play"></use></svg><span>Escuchar</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <svg><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación" aria-hidden="true">
+  <div class="mobile-menu-head">
+    <span class="brand-type"><b>MOJIN</b><span>TIME</span></span>
+    <button class="icon-btn" id="menuClose" aria-label="Cerrar menú"><svg><use href="#i-close"></use></svg></button>
+  </div>
+  <nav class="mobile-nav" aria-label="Navegación móvil">
+    <a href="#inicio" data-nav="inicio"><span>00</span>Inicio</a>
+    <a href="#archivo" data-nav="archivo"><span>01</span>El archivo</a>
+    <a href="#especiales" data-nav="especiales"><span>02</span>Especiales</a>
+    <a href="#youtube" data-nav="youtube"><span>03</span>YouTube</a>
+    <a href="#directo" data-nav="directo"><span>04</span>Twitch</a>
+    <a href="#sobre" data-nav="sobre"><span>05</span>Sobre mí</a>
+    <a href="#redes" data-nav="redes"><span>06</span>Redes</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <p>La carpa nunca cierra.</p>
+    <div class="social-row">
+      <a href="https://www.twitch.tv/mojintime" target="_blank" rel="noopener" aria-label="Twitch"><svg><use href="#i-twitch"></use></svg></a>
+      <a href="https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w" target="_blank" rel="noopener" aria-label="YouTube"><svg><use href="#i-youtube"></use></svg></a>
+      <a href="https://www.instagram.com/mojin_time" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-instagram"></use></svg></a>
+      <a href="https://www.tiktok.com/@mojintime" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#i-tiktok"></use></svg></a>
+      <a href="https://archive.org/details/mojin-time-la-carpa" target="_blank" rel="noopener" aria-label="Internet Archive"><svg><use href="#i-archive"></use></svg></a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-floor" aria-hidden="true"></div>
+    <div class="hero-beam" aria-hidden="true"></div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span>MOJIN TIME <span class="slash">/</span> HARD MUSIC &amp; VISUALS</p>
+        <h1 class="hero-title" data-text="MOJIN TIME"><span class="hero-title-solid">MOJIN</span><span class="hero-title-outline">TIME</span></h1>
+        <p class="hero-slogan">La carpa <em>nunca</em> cierra.</p>
+        <p class="hero-lead">DJ, streamer y coleccionista de noches largas. Aquí vive el archivo de <strong>La Carpa</strong>: 229 sesiones, 825 horas de música y una carpa que no piensa apagarse.</p>
+
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" id="heroPlay" data-play-latest>
+            <span class="btn-icon"><svg><use href="#i-play"></use></svg></span>
+            <span>Escuchar la última</span>
+          </button>
+          <a class="btn btn-ghost btn-lg" href="#archivo">
+            <span>Explorar el archivo</span>
+            <svg class="btn-arrow"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+
+        <p class="hero-note"><span class="pulse-dot"></span> 229 noches listas. Sin registro. Dale al play.</p>
+      </div>
+
+      <aside class="hero-poster" id="heroPoster" aria-label="Última sesión de La Carpa">
+        <div class="poster-frame">
+          <div class="poster-art" id="heroPosterArt"></div>
+          <div class="poster-scan"></div>
+          <div class="poster-top"><span>ARCHIVO · 2023—2026</span><span class="mono">MT—001</span></div>
+          <div class="poster-center">
+            <img class="poster-logo" src="assets/img/logo.webp" alt="Logo de Mojin Time" width="220" height="220">
+            <p class="poster-name">LA CARPA</p>
+            <p class="poster-by">BY MOJIN TIME</p>
+          </div>
+          <div class="poster-bottom">
+            <div>
+              <span class="poster-label">ÚLTIMA SESIÓN</span>
+              <strong id="posterDate">22 NOV 2026</strong>
+            </div>
+            <button class="poster-play" data-play-latest aria-label="Reproducir la última sesión">
+              <svg><use href="#i-play"></use></svg>
+            </button>
+          </div>
+          <div class="poster-strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="poster-caption"><span>SESIÓN MÁS RECIENTE</span><span id="posterDuration">4 H 04 MIN</span></div>
+      </aside>
+    </div>
+
+    <div class="wrap hero-bottom">
+      <div class="hero-stats" role="list">
+        <div class="hstat" role="listitem"><strong><span class="counter" data-count="229">229</span></strong><span>SESIONES EN EL ARCHIVO</span></div>
+        <div class="hstat" role="listitem"><strong><span class="counter" data-count="825">825</span><i>h</i></strong><span>DE MÚSICA SIN PARAR</span></div>
+        <div class="hstat" role="listitem"><strong><span class="counter" data-count="110.84" data-decimals="1">110,8</span><i>GB</i></strong><span>DE RECUERDOS</span></div>
+        <div class="hstat" role="listitem"><strong><span class="counter" data-count="1876" data-suffix=" K" data-divide="1000" data-decimals="1">1,8</span></strong><span>SEGUIDORES EN TWITCH</span></div>
+      </div>
+      <a class="scroll-hint" href="#archivo" aria-label="Bajar al reproductor"><span>SCROLL</span><i></i></a>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+      <span>HARD MUSIC <i>✦</i> LA CARPA <i>✦</i> DIRECTOS <i>✦</i> VISUALS <i>✦</i> 825 HORAS <i>✦</i> ARCHIVO VIVO <i>✦</i></span>
+    </div>
+  </div>
+
+  <!-- ============ ARCHIVO / PLAYER ============ -->
+  <section class="section archive" id="archivo">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div class="section-kicker"><span>01</span> EL ARCHIVO</div>
+        <div class="section-head-grid">
+          <h2 class="section-title">Toda la carpa,<br><em>en tus oídos.</em></h2>
+          <div class="section-aside">
+            <p class="section-lead">Un reproductor hecho para durar. Busca la noche que quieras, salta de especial en especial y deja que el directo vuelva a sonar. Las 229 sesiones están alojadas en Internet Archive y se reproducen desde aquí.</p>
+            <p class="section-micro"><span class="pulse-dot"></span> ARCHIVO VIVO · 2023—2026</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="archive-shell">
+        <div class="player-deck reveal" id="playerDeck">
+          <div class="deck-head">
+            <span class="deck-state"><i class="eq"><b></b><b></b><b></b><b></b></i> <span id="playerStatus">LISTO PARA SONAR</span></span>
+            <span class="deck-code">LA CARPA / <span id="deckCode">229</span></span>
+          </div>
+
+          <div class="deck-body">
+            <div class="deck-art" id="deckArt">
+              <div class="deck-art-img" id="deckArtImg"></div>
+              <div class="deck-art-tint"></div>
+              <span class="deck-art-side">LA CARPA · MOJIN TIME</span>
+              <span class="deck-art-year" id="deckYear">2026</span>
+              <img class="deck-art-logo" src="assets/img/logo.webp" alt="" width="130" height="130">
+              <span class="deck-art-stamp" id="deckDate">22 NOV 2026</span>
+            </div>
+
+            <div class="deck-main">
+              <div class="deck-tags"><span id="deckTag">SESIÓN COMPLETA</span><span id="deckSpecial" hidden>ESPECIAL</span><span class="deck-src">ARCHIVE.ORG</span></div>
+              <h3 class="deck-title" id="deckTitle">Sesión completa</h3>
+              <p class="deck-sub" id="deckSub">Domingo, 22 de noviembre de 2026 · 588 MB</p>
+
+              <div class="seek-wrap">
+                <input class="range seek" type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Progreso de la sesión">
+                <div class="seek-times"><span id="timeNow">0:00</span><span id="timeLeft">-4:04:00</span><span id="timeTotal">4:04:00</span></div>
+              </div>
+
+              <div class="deck-controls">
+                <div class="controls-main">
+                  <button class="ctrl" id="btnShuffle" aria-label="Aleatorio" aria-pressed="false"><svg><use href="#i-shuffle"></use></svg></button>
+                  <button class="ctrl" id="btnPrev" aria-label="Sesión anterior"><svg><use href="#i-prev"></use></svg></button>
+                  <button class="play-main" id="btnPlay" aria-label="Reproducir"><span class="play-icon"><svg><use href="#i-play"></use></svg></span><span class="pause-icon"><svg><use href="#i-pause"></use></svg></span><span class="play-spinner"></span></button>
+                  <button class="ctrl" id="btnNext" aria-label="Sesión siguiente"><svg><use href="#i-next"></use></svg></button>
+                  <button class="ctrl" id="btnRepeat" aria-label="Repetir" aria-pressed="false"><svg><use href="#i-repeat"></use></svg></button>
+                </div>
+                <div class="controls-tools">
+                  <button class="ctrl" id="btnFav" aria-label="Favorito" aria-pressed="false"><svg><use href="#i-heart"></use></svg></button>
+                  <a class="ctrl" id="btnDownload" href="https://archive.org/download/mojin-time-la-carpa/Mojin%20Time%20%20-%2022-11-2026.mp3?download=1" target="_blank" rel="noopener" aria-label="Descargar sesión"><svg><use href="#i-download"></use></svg></a>
+                  <a class="ctrl" id="btnArchive" href="https://archive.org/details/mojin-time-la-carpa" target="_blank" rel="noopener" aria-label="Abrir en Internet Archive"><svg><use href="#i-external"></use></svg></a>
+                </div>
+              </div>
+
+              <div class="deck-foot">
+                <div class="volume-wrap">
+                  <button class="ctrl ctrl-sm" id="btnMute" aria-label="Silenciar"><svg><use href="#i-volume"></use></svg></button>
+                  <input class="range volume-range" type="range" id="volume" min="0" max="100" value="85" aria-label="Volumen">
+                </div>
+                <button class="speed-btn" id="btnSpeed" aria-label="Velocidad de reproducción">1×</button>
+                <div class="deck-viz"><canvas id="viz" aria-hidden="true"></canvas><span>VISUALIZER</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="playlist reveal" id="playlistPanel">
+          <div class="pl-head">
+            <div class="pl-title-row">
+              <h3>LA CARPA <span id="plCount">229</span></h3>
+              <span class="pl-sort-wrap"><select id="sortSelect" aria-label="Ordenar sesiones"><option value="recent">Más recientes</option><option value="oldest">Más antiguas</option><option value="longest">Más largas</option></select></span>
+            </div>
+            <p class="pl-sub">Selecciona una noche y deja que corra.</p>
+            <div class="pl-search">
+              <svg><use href="#i-search"></use></svg>
+              <input type="search" id="searchInput" placeholder="Buscar por fecha, especial, parte…" autocomplete="off" aria-label="Buscar sesiones">
+              <button id="searchClear" class="search-clear" aria-label="Borrar búsqueda" hidden><svg><use href="#i-close"></use></svg></button>
+            </div>
+            <div class="pl-filters">
+              <div class="chips" id="yearChips" role="group" aria-label="Filtrar por año">
+                <button class="chip is-active" data-year="all">Todas <span>229</span></button>
+                <button class="chip" data-year="2026">2026 <span>110</span></button>
+                <button class="chip" data-year="2025">2025 <span>59</span></button>
+                <button class="chip" data-year="2024">2024 <span>47</span></button>
+                <button class="chip" data-year="2023">2023 <span>13</span></button>
+              </div>
+              <button class="random-btn" id="btnRandom"><svg><use href="#i-shuffle"></use></svg> Sorpréndeme</button>
+            </div>
+          </div>
+          <div class="pl-list" id="playlist" aria-label="Lista de sesiones de La Carpa"></div>
+          <div class="pl-empty" id="plEmpty" hidden>
+            <span class="pl-empty-mark">Ø</span>
+            <p>No hay sesiones con ese filtro.</p>
+            <button class="link-btn" id="resetFilters">Quitar filtros</button>
+          </div>
+          <button class="load-more" id="btnMore">Mostrar más sesiones <span id="moreCount"></span></button>
+          <p class="pl-foot-note"><svg><use href="#i-clock"></use></svg> Se guarda tu última sesión y el minuto exacto. Vuelve cuando quieras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESPECIALES ============ -->
+  <section class="section specials" id="especiales">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div class="section-kicker"><span>02</span> ESPECIALES</div>
+        <div class="section-head-grid">
+          <h2 class="section-title">Noches que<br><em>no se olvidan.</em></h2>
+          <div class="section-aside">
+            <p class="section-lead">Diez horas seguidas, trance, nochevieja, cumpleaños y homenajes. Las citas que convirtieron La Carpa en una tradición.</p>
+            <div class="rail-nav">
+              <button class="rail-btn" id="specialsPrev" aria-label="Especiales anteriores"><svg><use href="#i-prev"></use></svg></button>
+              <button class="rail-btn" id="specialsNext" aria-label="Especiales siguientes"><svg><use href="#i-next"></use></svg></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="specials-rail" id="specialsRail"></div>
+      <p class="rail-hint"><span class="rail-line"></span> Arrastra o desliza · pulsa una portada para escucharla</p>
+    </div>
+  </section>
+
+  <!-- ============ YOUTUBE ============ -->
+  <section class="section youtube" id="youtube">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div class="section-kicker"><span>03</span> RESUBIDOS</div>
+        <div class="section-head-grid">
+          <h2 class="section-title">El directo,<br><em>otra vez.</em></h2>
+          <div class="section-aside">
+            <p class="section-lead">Los últimos directos resubidos al canal de YouTube. Sin cortes, sin resúmenes: la sesión entera para cuando quieras volver a pasar horas en La Carpa.</p>
+            <a class="text-link" href="https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w" target="_blank" rel="noopener">Ver el canal completo <svg><use href="#i-external"></use></svg></a>
+          </div>
+        </div>
+      </header>
+      <div class="yt-grid" id="ytGrid"></div>
+      <div class="yt-foot">
+        <p><svg><use href="#i-youtube"></use></svg> 95 suscriptores · resubidos del directo</p>
+        <div class="yt-foot-actions">
+          <button class="btn btn-ghost btn-sm" id="ytMore">Ver los 15 resubidos <svg><use href="#i-arrow"></use></svg></button>
+          <a class="btn btn-ghost btn-sm" href="https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w" target="_blank" rel="noopener">Abrir YouTube <svg><use href="#i-external"></use></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TWITCH ============ -->
+  <section class="section live" id="directo">
+    <div class="live-bg" aria-hidden="true"></div>
+    <div class="wrap live-inner">
+      <div class="live-copy reveal">
+        <div class="section-kicker"><span>04</span> EN DIRECTO</div>
+        <h2 class="section-title">La carpa,<br><em>en tiempo real.</em></h2>
+        <p class="section-lead">Twitch es casa. Allí se enciende el directo, se prueban visuales nuevos y se alarga la noche hasta que aguante el cuerpo. Pasa, ponte cómodo y sube el volumen.</p>
+        <div class="live-badges">
+          <span><svg><use href="#i-twitch"></use></svg> TWITCH DJ PROGRAM</span>
+          <span>AFILIADO</span>
+          <span>DESDE 2017</span>
+        </div>
+        <div class="live-actions">
+          <button class="btn btn-primary btn-lg" id="openTwitch"><span class="btn-icon"><svg><use href="#i-play"></use></svg></span> Abrir el reproductor</button>
+          <a class="btn btn-ghost btn-lg" href="https://www.twitch.tv/mojintime" target="_blank" rel="noopener">Seguir en Twitch <svg><use href="#i-external"></use></svg></a>
+        </div>
+        <p class="live-note"><span class="pulse-dot"></span> Si el canal está offline, Twitch te lo dirá. El archivo siempre está abierto.</p>
+      </div>
+
+      <aside class="live-card reveal">
+        <div class="live-card-top">
+          <span class="live-label"><i></i> ÚLTIMO DIRECTO</span>
+          <span class="mono">TWITCH</span>
+        </div>
+        <div class="live-profile">
+          <img src="assets/img/twitch-avatar.webp" alt="Avatar de Mojin Time en Twitch" width="96" height="96">
+          <div><strong>MojinTime</strong><span>1876 seguidores · Twitch DJ</span></div>
+        </div>
+        <p class="live-title" id="liveLastTitle">LA CARPA · Live DJ Set | HARD MUSIC &amp; VISUALS</p>
+        <p class="live-date" id="liveLastDate">Último directo · 26 NOV 2026</p>
+        <div class="live-stats">
+          <div><strong>1,8 K</strong><span>SEGUIDORES</span></div>
+          <div><strong>2017</strong><span>EN TWITCH</span></div>
+          <div><strong>DJ</strong><span>PROGRAM</span></div>
+        </div>
+        <button class="live-open" id="openTwitchCard">
+          <span class="live-open-icon"><svg><use href="#i-play"></use></svg></span>
+          <span><b>Abrir Twitch aquí</b><small>Reproductor integrado</small></span>
+          <svg class="live-open-arrow"><use href="#i-arrow"></use></svg>
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="section about" id="sobre">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-sticky reveal">
+          <div class="section-kicker"><span>05</span> SOBRE MOJIN</div>
+          <h2 class="section-title">Música dura.<br><em>Luces azules.</em><br>Nada de prisa.</h2>
+          <div class="about-sign">
+            <span class="about-sign-line"></span>
+            <span>MOJIN TIME · ES</span>
+          </div>
+        </div>
+
+        <div class="about-body">
+          <div class="about-text reveal">
+            <p class="about-lead">Soy Mojin Time. Empecé en 2016 y todavía no tengo hora de cierre. En Twitch encontré mi sitio: sesiones largas, hard music, visuales y una comunidad que se queda hasta el final.</p>
+            <p><strong>La Carpa</strong> es el nombre de esa costumbre. Empezó como una sesión más y acabó siendo el archivo que hoy escuchas: 229 grabaciones, 825 horas y 110,8 GB de noches que, de otra forma, se habrían perdido.</p>
+            <p>Aquí no hay prisa por el algoritmo. Hay sets para trabajar, para conducir, para limpiar la casa o para no dormir. Elige una noche y quédate.</p>
+          </div>
+
+          <blockquote class="about-quote reveal">
+            <span class="quote-mark">“</span>
+            <p>Aquí la música se siente, no solo se escucha.</p>
+            <cite>— BIO DE TWITCH</cite>
+          </blockquote>
+
+          <div class="timeline reveal">
+            <div class="tl-row"><span class="tl-year">2016</span><div><strong>Primer canal de YouTube</strong><p>El archivo empieza a rodar. Años después, ese canal se convertiría en el lugar de los resubidos.</p></div></div>
+            <div class="tl-row"><span class="tl-year">2017</span><div><strong>Llega Twitch</strong><p>El directo encuentra su casa. Desde entonces, La Carpa se enciende allí.</p></div></div>
+            <div class="tl-row"><span class="tl-year">2023</span><div><strong>Arranca el archivo</strong><p>La primera sesión guardada de La Carpa abre una colección que no ha dejado de crecer.</p></div></div>
+            <div class="tl-row"><span class="tl-year">2026</span><div><strong>229 noches</strong><p>825 horas, 110,8 GB y una comunidad que sigue apareciendo cuando baja la luz.</p></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-banner reveal">
+        <img src="assets/img/yt-banner.webp" alt="Banner de La Carpa by Mojin Time" loading="lazy">
+        <div class="about-banner-shade"></div>
+        <div class="about-banner-caption"><span>LA CARPA BY MOJIN TIME</span><span>ARCHIVO 2023—2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REDES ============ -->
+  <section class="section networks" id="redes">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div class="section-kicker"><span>06</span> REDES</div>
+        <div class="section-head-grid">
+          <h2 class="section-title">Todo pasa<br><em>en algún sitio.</em></h2>
+          <div class="section-aside">
+            <p class="section-lead">El directo en Twitch, los resubidos en YouTube, los clips en Instagram y TikTok y las 229 sesiones en Internet Archive. Elige tu puerta.</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="net-grid">
+        <a class="net-card net-twitch reveal" href="https://www.twitch.tv/mojintime" target="_blank" rel="noopener">
+          <span class="net-icon"><svg><use href="#i-twitch"></use></svg></span>
+          <span class="net-body"><span class="net-kicker">DIRECTOS · MÚSICA EN VIVO</span><strong>Twitch</strong><span class="net-handle">/mojintime · 1,8 K seguidores</span></span>
+          <span class="net-arrow"><svg><use href="#i-arrow-up"></use></svg></span>
+        </a>
+        <a class="net-card net-youtube reveal" href="https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w" target="_blank" rel="noopener">
+          <span class="net-icon"><svg><use href="#i-youtube"></use></svg></span>
+          <span class="net-body"><span class="net-kicker">RESUBIDOS · SESIONES COMPLETAS</span><strong>YouTube</strong><span class="net-handle">Mojin Time · 95 suscriptores</span></span>
+          <span class="net-arrow"><svg><use href="#i-arrow-up"></use></svg></span>
+        </a>
+        <a class="net-card net-instagram reveal" href="https://www.instagram.com/mojin_time" target="_blank" rel="noopener">
+          <span class="net-icon"><svg><use href="#i-instagram"></use></svg></span>
+          <span class="net-body"><span class="net-kicker">FOTOS · CLIPS · NOVEDADES</span><strong>Instagram</strong><span class="net-handle">@mojin_time</span></span>
+          <span class="net-arrow"><svg><use href="#i-arrow-up"></use></svg></span>
+        </a>
+        <a class="net-card net-tiktok reveal" href="https://www.tiktok.com/@mojintime" target="_blank" rel="noopener">
+          <span class="net-icon"><svg><use href="#i-tiktok"></use></svg></span>
+          <span class="net-body"><span class="net-kicker">MEZCLAS · CLIPS EXCLUSIVOS</span><strong>TikTok</strong><span class="net-handle">@mojintime</span></span>
+          <span class="net-arrow"><svg><use href="#i-arrow-up"></use></svg></span>
+        </a>
+        <a class="net-card net-archive reveal" href="https://archive.org/details/mojin-time-la-carpa" target="_blank" rel="noopener">
+          <span class="net-icon"><svg><use href="#i-archive"></use></svg></span>
+          <span class="net-body"><span class="net-kicker">ARCHIVO COMPLETO · 110,8 GB</span><strong>Internet Archive</strong><span class="net-handle">mojin-time-la-carpa</span></span>
+          <span class="net-arrow"><svg><use href="#i-arrow-up"></use></svg></span>
+        </a>
+      </div>
+
+      <div class="final-cta reveal">
+        <p class="section-kicker"><span>∞</span> NOS VEMOS DENTRO</p>
+        <h2>La carpa<br><em>te espera.</em></h2>
+        <div class="final-actions">
+          <button class="btn btn-primary btn-lg" id="finalPlay" data-play-latest><span class="btn-icon"><svg><use href="#i-play"></use></svg></span> Poner la última sesión</button>
+          <a class="btn btn-ghost btn-lg" href="https://www.twitch.tv/mojintime" target="_blank" rel="noopener">Pasar por Twitch <svg><use href="#i-external"></use></svg></a>
+        </div>
+        <p class="final-note">¿Colaboración, evento o simplemente saludar? <a href="https://www.instagram.com/mojin_time" target="_blank" rel="noopener">Instagram</a> <span>·</span> <a href="https://www.twitch.tv/mojintime" target="_blank" rel="noopener">Twitch</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-mark" aria-hidden="true">MOJIN TIME</div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#inicio" aria-label="Mojin Time — inicio">
+          <span class="brand-mark"><img src="assets/img/avatar.webp" alt="" width="48" height="48"></span>
+          <span class="brand-type"><b>MOJIN</b><span>TIME</span><small>LA CARPA</small></span>
+        </a>
+        <p>Hard music, visuales y horas de directo.<br>La carpa nunca cierra.</p>
+      </div>
+      <div class="foot-col">
+        <span class="foot-title">EXPLORAR</span>
+        <a href="#archivo">El archivo</a>
+        <a href="#especiales">Especiales</a>
+        <a href="#youtube">YouTube</a>
+        <a href="#sobre">Sobre mí</a>
+      </div>
+      <div class="foot-col">
+        <span class="foot-title">SÍGUEME</span>
+        <a href="https://www.twitch.tv/mojintime" target="_blank" rel="noopener">Twitch</a>
+        <a href="https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/mojin_time" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@mojintime" target="_blank" rel="noopener">TikTok</a>
+      </div>
+      <div class="foot-col foot-col-wide">
+        <span class="foot-title">EL ARCHIVO</span>
+        <p>Las 229 sesiones están alojadas en Internet Archive y se reproducen desde su fuente original. Este sitio no aloja los archivos de audio.</p>
+        <a class="text-link" href="https://archive.org/details/mojin-time-la-carpa" target="_blank" rel="noopener">Abrir en Archive.org <svg><use href="#i-external"></use></svg></a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year">2026</span> Mojin Time. La carpa nunca cierra.</p>
+      <div>
+        <button class="foot-top" id="backTop">Volver arriba <svg><use href="#i-arrow-up"></use></svg></button>
+        <span class="foot-dot">·</span>
+        <span class="mono">HECHO CON LUCES AZULES</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MINI PLAYER ============ -->
+<div class="mini-player" id="miniPlayer" aria-label="Reproductor rápido">
+  <button class="mini-art" id="miniOpen" aria-label="Abrir el reproductor completo">
+    <span id="miniArt"></span>
+    <span class="mini-art-play"><svg><use href="#i-play"></use></svg></span>
+  </button>
+  <div class="mini-info" id="miniInfo">
+    <span class="mini-kicker" id="miniKicker">AHORA SUENA</span>
+    <strong id="miniTitle">Sesión completa</strong>
+    <span id="miniSub">22 NOV 2026 · 4 h 04 min</span>
+    <div class="mini-progress"><span id="miniProgress"></span></div>
+  </div>
+  <button class="mini-btn" id="miniPlay" aria-label="Reproducir"><svg class="mini-play-icon"><use href="#i-play"></use></svg><svg class="mini-pause-icon"><use href="#i-pause"></use></svg></button>
+  <button class="mini-btn mini-expand" id="miniExpand" aria-label="Ir al reproductor"><svg><use href="#i-expand"></use></svg></button>
+  <button class="mini-close" id="miniClose" aria-label="Cerrar mini reproductor"><svg><use href="#i-close"></use></svg></button>
+</div>
+
+<!-- ============ VIDEO MODAL ============ -->
+<dialog class="media-modal" id="videoModal" aria-labelledby="videoModalTitle">
+  <div class="modal-frame">
+    <div class="modal-head">
+      <div><span class="modal-kicker">MOJIN TIME / YOUTUBE</span><strong id="videoModalTitle">Sesión resubida</strong></div>
+      <button class="icon-btn modal-close" id="videoClose" aria-label="Cerrar vídeo"><svg><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="video-embed" id="videoEmbed"></div>
+    <div class="modal-foot">
+      <p id="videoMeta">Sesión completa</p>
+      <a class="text-link" id="videoLink" href="https://www.youtube.com/channel/UCedPSfiLFZMcHlkbmF7fM-w" target="_blank" rel="noopener">Abrir en YouTube <svg><use href="#i-external"></use></svg></a>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============ TWITCH MODAL ============ -->
+<dialog class="media-modal" id="liveModal" aria-labelledby="liveModalTitle">
+  <div class="modal-frame">
+    <div class="modal-head">
+      <div><span class="modal-kicker">MOJIN TIME / TWITCH</span><strong id="liveModalTitle">La carpa en directo</strong></div>
+      <button class="icon-btn modal-close" id="liveClose" aria-label="Cerrar Twitch"><svg><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="twitch-embed" id="twitchEmbed"></div>
+    <div class="modal-foot">
+      <p>Si el canal está offline, Twitch mostrará su pantalla de espera.</p>
+      <a class="text-link" href="https://www.twitch.tv/mojintime" target="_blank" rel="noopener">Abrir en Twitch <svg><use href="#i-external"></use></svg></a>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="easter-egg" id="easterEgg" aria-hidden="true"><span>LA CARPA NUNCA CIERRA.</span></div>
+
+<script src="assets/js/data.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

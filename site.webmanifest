@@ -1,0 +1,28 @@
+{
+  "name": "Mojin Time — La Carpa",
+  "short_name": "Mojin Time",
+  "description": "El archivo de La Carpa: 229 sesiones, 825 horas de hard music, directos y visuales.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#02050c",
+  "theme_color": "#02050c",
+  "lang": "es",
+  "categories": ["music", "entertainment"],
+  "icons": [
+    {
+      "src": "assets/img/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
