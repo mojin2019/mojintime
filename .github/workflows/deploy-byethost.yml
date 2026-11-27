@@ -1,0 +1,84 @@
+name: Actualizar y publicar en ByetHost
+
+on:
+  schedule:
+    # Cada 6 horas, unos minutos después del workflow de GitHub Pages.
+    - cron: "37 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: byethost
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Preparar conexión FTP
+        id: ftp
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+          FTP_PROTOCOL: ${{ secrets.FTP_PROTOCOL }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+        run: |
+          if [ -z "$FTP_SERVER" ] || [ -z "$FTP_USERNAME" ] || [ -z "$FTP_PASSWORD" ]; then
+            echo "::error::Faltan los secrets FTP_SERVER, FTP_USERNAME o FTP_PASSWORD en Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          DIR="${FTP_REMOTE_DIR:-htdocs/}"
+          case "$DIR" in
+            */) ;;
+            *) DIR="$DIR/" ;;
+          esac
+          echo "dir=$DIR" >> "$GITHUB_OUTPUT"
+          echo "protocol=${FTP_PROTOCOL:-ftp}" >> "$GITHUB_OUTPUT"
+          echo "port=${FTP_PORT:-21}" >> "$GITHUB_OUTPUT"
+
+      - name: Actualizar sesiones, vídeos y estadísticas
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: node tools/update.mjs
+
+      - name: Preparar la carpeta dist
+        run: node tools/build.mjs
+
+      - name: Subir dist a ByetHost por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ steps.ftp.outputs.protocol }}
+          port: ${{ steps.ftp.outputs.port }}
+          local-dir: ./dist/
+          # En ByetHost la raíz web suele ser htdocs/.
+          server-dir: ${{ steps.ftp.outputs.dir }}
+          dangerous-clean-slate: false
+          log-level: standard
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.ftp-deploy-sync-state.json
+            AUTOMATICO.md
+            README.md
+            LEEME.txt
+            package.json
+            .gitignore

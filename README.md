@@ -42,6 +42,8 @@ El reproductor guarda en `localStorage` la última sesión, el minuto, el volume
 `assets/js/data.js` se genera a partir del metadata de Internet Archive, el feed de YouTube y Twitch. La publicación es automática: GitHub Actions revisa las novedades cada 6 horas, regenera los datos y publica la web en GitHub Pages.
 
 - Guía paso a paso: [`AUTOMATICO.md`](AUTOMATICO.md).
+- GitHub Pages: workflow `Actualizar y publicar`.
+- ByetHost: workflow `Actualizar y publicar en ByetHost`, con las credenciales FTP guardadas como secrets.
 - En local: `npm run actualizar`, `npm run build` y `npm run preview`.
 
 Si quieres editar algo a mano, cada sesión es un objeto dentro de `sessions` y cada vídeo vive en `videos`. Los títulos personalizados y las portadas locales se conservan entre actualizaciones.

@@ -10,6 +10,8 @@ La web ya no se toca a mano. Un workflow de GitHub Actions hace cada 6 horas est
 6. Publica la carpeta `dist/` en **GitHub Pages**.
 
 No hacen falta claves, tokens ni base de datos. Todo usa datos públicos.
+La única excepción son las credenciales FTP de ByetHost, que se guardan como
+secrets de GitHub si eliges publicar allí.
 
 ---
 
@@ -33,9 +35,12 @@ git push -u origin main
 
 Si GitHub te pide iniciar sesión, usa el navegador o un token personal. También puedes subir el contenido con GitHub Desktop.
 
-### 3. Activa Pages
+### 3. Activa Pages (solo si vas a usar GitHub Pages)
 
 En el repositorio: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+Si solo quieres publicar en ByetHost, sáltate este paso y ve directamente a la
+sección **Publicar en ByetHost por FTP**.
 
 ### 4. Lanza la primera publicación
 
@@ -65,11 +70,82 @@ Si tienes un dominio (por ejemplo `mojintime.com`):
    Open Graph, sitemap y robots apuntarán al dominio nuevo.
 
 El subdominio gratuito de ByetHost no permite cambiar el DNS, así que no se puede
-apuntar directamente a GitHub Pages. Opciones:
+apuntar directamente a GitHub Pages. Si quieres seguir usando ByetHost, usa el
+workflow por FTP que viene incluido: `.github/workflows/deploy-byethost.yml`.
 
-- usar la URL `TU_USUARIO.github.io/mojintime`;
-- usar un dominio propio;
-- o pedir un workflow alternativo por FTP para seguir publicando en ByetHost.
+---
+
+## Publicar en ByetHost por FTP
+
+**No tienes que subir nada a ByetHost a mano.** Subes el proyecto a GitHub una vez
+y GitHub Actions actualiza la web y sube `dist/` a la carpeta pública de ByetHost
+cada 6 horas.
+
+### 1. Averigua los datos FTP
+
+En el panel de ByetHost busca **FTP** o **File Manager**. Normalmente son:
+
+- Servidor: `ftp.byethost12.com` (o el que indique tu panel).
+- Usuario: algo como `b12_12345678`.
+- Contraseña: la de tu cuenta FTP.
+- Carpeta pública: `htdocs/` (en ByetHost suele ser `htdocs`, no `public_html`).
+
+Puedes comprobarlo entrando con FileZilla: el `index.html` actual debe estar dentro
+de esa carpeta.
+
+### 2. Guarda las credenciales en GitHub
+
+En el repositorio: **Settings → Secrets and variables → Actions → New repository secret**.
+
+Crea estos secrets:
+
+| Secret | Valor |
+|---|---|
+| `FTP_SERVER` | `ftp.byethost12.com` (el de tu panel) |
+| `FTP_USERNAME` | tu usuario FTP |
+| `FTP_PASSWORD` | tu contraseña FTP |
+| `FTP_REMOTE_DIR` | `htdocs/` (opcional, debe terminar en `/`) |
+| `FTP_PROTOCOL` | `ftp` (opcional; prueba `ftps` si falla) |
+| `FTP_PORT` | `21` (opcional) |
+
+Los secrets no se ven en el código ni en los logs. No los pongas en `index.html`
+ni en ningún archivo del repositorio.
+
+Si al entrar por FTP ya estás dentro de la carpeta pública (ves `index.html` en la
+raíz), pon `FTP_REMOTE_DIR` con valor `/`. Si ves una carpeta `htdocs`, deja el
+valor por defecto `htdocs/`.
+
+### 3. Lanza la primera subida
+
+Ve a **Actions → Actualizar y publicar en ByetHost → Run workflow**.
+
+El workflow:
+
+1. Lee Archive, YouTube y Twitch.
+2. Regenera `data.js`, `index.html`, sitemap, etc.
+3. Prepara `dist/`.
+4. Sube **el contenido de `dist/`** a `htdocs/` por FTP.
+5. Repite todo cada 6 horas.
+
+Abre tu dominio y comprueba que la portada nueva está ahí. A partir de ese momento
+no vuelves a subir archivos manualmente.
+
+### Si el FTP falla
+
+- Revisa que `FTP_REMOTE_DIR` sea exactamente la carpeta donde está el `index.html`
+  actual (normalmente `htdocs/`).
+- Comprueba usuario y contraseña entrando con FileZilla.
+- Si tu hosting usa FTP seguro, crea `FTP_PROTOCOL` con valor `ftps`.
+- Algunos paneles de ByetHost bloquean FTP hasta que lo activas o creas un usuario FTP.
+- El workflow no borra archivos antiguos (`dangerous-clean-slate: false`), así que
+  una primera subida nunca te deja la web vacía.
+
+### Si solo quieres ByetHost
+
+Puedes desactivar el workflow de GitHub Pages en **Actions → Actualizar y publicar →
+⋯ → Disable workflow**. El de ByetHost seguirá funcionando solo.
+
+Si quieres las dos copias (GitHub Pages y ByetHost), deja los dos workflows activos.
 
 ---
 
