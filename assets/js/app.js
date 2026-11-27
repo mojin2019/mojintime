@@ -1487,6 +1487,7 @@
   function init() {
     if (state.initialized) return;
     state.initialized = true;
+    document.body.classList.add('app-shell');
     state.savedAt = 0;
     applyVolume(savedVolume, false);
     audio.playbackRate = savedSpeed;
