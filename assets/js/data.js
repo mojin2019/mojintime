@@ -1,6 +1,6 @@
 window.MOJIN_DATA = {
   "meta": {
-    "generatedAt": "2026-11-27T12:36:09.358Z",
+    "generatedAt": "2026-11-27T12:38:50.424Z",
     "source": "Internet Archive · YouTube · Twitch"
   },
   "site": {
