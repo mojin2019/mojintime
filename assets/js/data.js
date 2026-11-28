@@ -1,6 +1,6 @@
 window.MOJIN_DATA = {
   "meta": {
-    "generatedAt": "2026-11-27T12:38:50.424Z",
+    "generatedAt": "2026-11-28T01:29:28.119Z",
     "source": "Internet Archive · YouTube · Twitch"
   },
   "site": {
@@ -4250,7 +4250,7 @@ window.MOJIN_DATA = {
       "date": "2026-11-22",
       "duration": 14674,
       "minutes": 245,
-      "views": 74,
+      "views": 83,
       "thumb": "assets/img/yt/N-VTa0iD_Jo.webp",
       "url": "https://www.youtube.com/watch?v=N-VTa0iD_Jo"
     },
@@ -4261,7 +4261,7 @@ window.MOJIN_DATA = {
       "date": "2026-11-22",
       "duration": 13779,
       "minutes": 230,
-      "views": 47,
+      "views": 54,
       "thumb": "assets/img/yt/98jlIZP14cE.webp",
       "url": "https://www.youtube.com/watch?v=98jlIZP14cE"
     },
@@ -4272,7 +4272,7 @@ window.MOJIN_DATA = {
       "date": "2026-11-14",
       "duration": 9588,
       "minutes": 160,
-      "views": 70,
+      "views": 71,
       "thumb": "assets/img/yt/kU0G5W7Rs9s.webp",
       "url": "https://www.youtube.com/watch?v=kU0G5W7Rs9s"
     },
@@ -4393,7 +4393,7 @@ window.MOJIN_DATA = {
       "date": "2026-09-15",
       "duration": 15705,
       "minutes": 262,
-      "views": 130,
+      "views": 131,
       "thumb": "assets/img/yt/Vzor7qFfl30.webp",
       "url": "https://www.youtube.com/watch?v=Vzor7qFfl30"
     },
